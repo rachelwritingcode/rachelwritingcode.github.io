@@ -16,7 +16,11 @@ navbar_entries:
     url: https://www.linkedin.com/in/rachelwritingcode/
 
 project_entries:
-
+  
+  - title: The Lab 🧪
+    url: 
+    desc: A collection of graduate research projects available upon request.
+    
   - title: Golang Book & Movie Review APIs 
     url: BookOrMovieAPI
     desc: Gathering book and movie reviews to recommend which one to read or watch first.
@@ -27,9 +31,7 @@ project_entries:
     desc: Learning more about Golang with bite sized projects
     highlight: WIP
 
-  - title: The Lab
-    url: 
-    desc: Graduate research projects available upon request.
+
 
 # footer_entries:
   # - title: twitter
