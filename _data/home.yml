@@ -27,6 +27,10 @@ project_entries:
     desc: Learning more about Golang with bite sized projects
     highlight: WIP
 
+  - title: The Lab
+    url: /
+    desc: Graduate research projects available upon request.
+
 # footer_entries:
   # - title: twitter
   #   url: https://twitter.com/rachelwritecode
