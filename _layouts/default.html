@@ -11,7 +11,7 @@
         {% endif %}
         <div class="credits">
           {%- if site.theme_config.show_copyright == true -%}
-          &copy;&nbsp; 2025 &nbsp;Rachel Wang 🦉
+          &copy;&nbsp; {{ "now" | date: "%Y" }} &nbsp;Rachel Wang 🦉
           &nbsp;•&nbsp;&nbsp;
           Powered By
           {%- endif -%}
