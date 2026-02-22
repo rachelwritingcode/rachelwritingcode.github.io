@@ -31,6 +31,7 @@ title: ""
 
 ⭐ [Scholaris - Developing a New National Shared Repository Service in Canada ](https://wiki.lyrasis.org/display/DSPACE/2024+DSpace+North+American+User+Group+Meeting?preview=/321585441/360251450/DSpace%202024%20North%20America%20User%20Group%20Meeting.pdf
 )
+
 ⭐ [Python Pizza Hamburg Conference 2020: Cat GIFS & the Ten Python Packages of 2020](https://docs.google.com/presentation/d/1m4HYGgQy2E6EJhx0Bley5M0kuDNYkfApxSodqENU1OQ/edit?usp=sharing)
 
 ⭐  [Pycon Canada 2019: Data Insights from Linked Data](https://2019.pycon.ca/talks/talk-147/)
