@@ -25,7 +25,7 @@ title: ""
 
 ---
 ## Talks 
-⭐ [Scholars Portal Days 2025 - Scholaris : Mises à jour en français ](https://docs.scholarsportal.info/Main/SP/SPDay/Scholars_Portal_Days_2025)
+⭐ [Scholars Portal Days 2025 - Scholaris: Mises à jour en français ](https://spday.scholarsportal.info/agenda/)
 
 ⭐ Scholaris November 2025 Community Call - Demo: Creating a SAF package using SAFCreator 
 
