@@ -8,7 +8,7 @@ title: ""
 
 ⭐ Scholaris November 2025 Community Call - Demo: Creating a SAF package using SAFCreator 
 
-⭐ [Scholaris - Developing a New National Shared Repository Service in Canada ](https://wiki.lyrasis.org/display/DSPACE/2024+DSpace+North+American+User+Group+Meeting?preview=/321585441/360251450/DSpace%202024%20North%20America%20User%20Group%20Meeting.pdf
+⭐ [DSpace North American User Group 2024 - Developing a New National Shared Repository Service in Canada ](https://wiki.lyrasis.org/display/DSPACE/2024+DSpace+North+American+User+Group+Meeting?preview=/321585441/360251450/DSpace%202024%20North%20America%20User%20Group%20Meeting.pdf
 )
 
 ⭐ [Python Pizza Hamburg Conference 2020: Cat GIFS & the Ten Python Packages of 2020](https://docs.google.com/presentation/d/1m4HYGgQy2E6EJhx0Bley5M0kuDNYkfApxSodqENU1OQ/edit?usp=sharing)
