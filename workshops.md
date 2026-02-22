@@ -2,7 +2,7 @@
 layout: post
 title: ""
 ---
----
+
 ## Talks 
 ⭐ [Scholars Portal Days 2025 - Scholaris: Mises à jour en français ](https://spday.scholarsportal.info/agenda/)
 
@@ -16,6 +16,8 @@ title: ""
 ⭐  [Pycon Canada 2019: Data Insights from Linked Data](https://2019.pycon.ca/talks/talk-147/)
 
 ⭐ [Code4Lib North Conference 2019: Why Vue.js](https://docs.google.com/presentation/d/14xDy2ylz0JoNm4n8hV2ApfH-dtEUwy7Wq96OnRJpTkI/edit?usp=sharing)
+
+---
 
 ## Workshops
 
@@ -37,4 +39,3 @@ title: ""
 
 ⭐ [ PyLadies & Women Who Code Workshop 2016: Python & Robotics ](https://docs.google.com/presentation/d/1bPcJztavFp446BhchM5uzrk3uMNsvPxYTS8gB9Ejzbs/edit?usp=sharing")
 
----
