@@ -13,8 +13,11 @@ GEM
   specs:
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
+    base64 (0.3.0)
+    bigdecimal (4.1.2)
     colorator (1.1.0)
     concurrent-ruby (1.2.2)
+    csv (3.3.5)
     daemons (1.4.1)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
@@ -56,6 +59,7 @@ GEM
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
+    logger (1.7.0)
     mercenary (0.4.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -80,10 +84,16 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw-ucrt
 
 DEPENDENCIES
+  base64
+  bigdecimal
+  csv
+  logger
   moonwalk!
   thin
+  webrick
 
 BUNDLED WITH
    2.4.19

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: about
+title: About
 ---
 <div class="about_me">
     <ul>

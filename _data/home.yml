@@ -3,7 +3,7 @@ navbar_entries:
   - title: about
     url: about
 
-  - title: workshops
+  - title: workshops & talks
     url: workshops
 
   - title: tech reading list
@@ -30,7 +30,6 @@ project_entries:
     url: https://github.com/rachelwritingcode/Gophercises
     desc: Learning more about Golang with bite sized projects
     highlight: WIP
-
 
 
 # footer_entries:

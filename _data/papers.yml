@@ -1,0 +1,54 @@
+- id: "arc-agi"
+  title: "On the Measure of Intelligence"
+  category: "AI"
+  summary: "Chollet introduces the Abstraction and Reasoning Corpus (ARC) as a general intelligence benchmark to evaluate human-like fluid intelligence."  
+  matters: "This framework is not an all-encompassing definition of intelligence, however, serves as an actionable and quantifiable guide for AI research." 
+  takeaway: "Achieving true AGI requires a pivot from skill-based benchmarks toward evaluating broad generalization and information efficiency."
+  link: "https://arxiv.org/abs/1911.01547"
+  keywords: ["AI", "AGI", "ARC"]
+
+- id: "cognitive-triaging"
+  title: "Cognitive Triaging of Phishing Attacks"
+  category: "Security"
+  summary: "Introduces Cialdini's principles of persuasion as an evaluation method for cognitive triggers found in phishing emails."
+  matters: "Bridging cognitive science and cybersecurity allows for the development of defensive tools and training that address the psychological vulnerabilities exploited in modern social engineering attacks."
+  takeaway: "Understanding the underlying aspects of human psychology helps us gain insights into building phishing resistance."
+  link: "https://www.usenix.org/system/files/sec19-van_der_heijden.pdf"
+  keywords: ["Cognitive Science", "Cyber Security"]
+
+- id: "distributed-cognition"
+  title: "Distributed cognition: toward a new foundation for human-computer interaction research"
+  category: "HCI"
+  summary: "The distributed cognition framework posits that cognitive processes are not bounded by the individual's brain but are extended across people, tools, artifacts, and the environment."
+  matters: "In the context of design, it moves beyond simple user-centered design to viewing technology as a way to extend human perception, cognition, and action cycles."
+  takeaway: "Conceptualizing the environment as an active component of the cognitive system enables designers to facilitate more effective collaboration, minimize user cognitive load, and engineer interfaces that act as seamless augmentations of human intelligence."
+  link: "https://dl.acm.org/doi/10.1145/353485.353487"
+  keywords: ["Human-Computer Interaction", "Cognitive Science", "User Experience Design"]
+
+- id: "anatomy-of-large-scale"
+  title: "The Anatomy of a Large-scale Hypertextual Web Search Engine"
+  category: "Systems"
+  summary: "A classic paper by Sergey Brin and Lawrence Page that introduces Google, a prototype search engine designed to efficiently crawl and index the Web."
+  matters: "We learn about PageRank, an objective measure of a web page's importance based on the link structure of the Web, which transformed search engine relevance ranking."
+  takeaway: "The Google algorithm is not merely a ranking formula, but a complete system architecture designed to store, index, and crawl massive datasets."
+  link: "https://snap.stanford.edu/class/cs224w-readings/Brin98Anatomy.pdf"
+  keywords: ["Search Engine", "PageRank", "Systems"]
+
+- id: "stop-explaining"
+  title: "Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead"
+  category: "AI"
+  summary: "There are great risks introduced when there is a reliance on black-box models, particularly in high-stakes domains where algorithmic decisions directly impact human welfare."
+  matters: "Understanding how a model approximates behavior is distinct from understanding its underlying decision-making process."
+  takeaway: "Rudin advocates for interpretable model design which ensures safety and trust for high-stakes decisions."
+  link: "https://arxiv.org/pdf/1811.10154"
+  keywords: [ "AI", "XAI", "Explainable Artificial Intelligence"]
+
+- id: "design-of-everyday"
+  title: "The Design of Everyday Things"
+  category: "HCI"
+  summary: "Norman introduces core principles of cognitive psychology to explain how products should be designed to be intuitive, accessible, and user-friendly."
+  matters: "Norman bridges the gap between human psychology and design by establishing the criticality of visibility, feedback, affordances, and constraints in creating usable interfaces."
+  takeaway: "Good design makes the right action easy and the wrong action difficult by providing clear feedback and visible controls, ultimately reducing the cognitive load on the user."
+  link: "https://search.worldcat.org/title/The-design-of-everyday-things/oclc/860902830"
+  keywords: [ "User Experience Design", "HCI", "Usability"]
+
