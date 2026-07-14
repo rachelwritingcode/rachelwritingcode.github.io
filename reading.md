@@ -6,10 +6,8 @@ permalink: /reading/
 
 📚 A growing list of interesting academic literature. Want to add to your reading list? I recommend [__USENIX__](https://www.usenix.org/conferences/best-papers) and [__CHI__](https://programs.sigchi.org/chi/2026/awards/best-papers) papers to get started.
 
-<!-- 1. Interactive Explorer Layout Container -->
 <div class="explorer-wrapper">
 
-  <!-- Filtering Control Panel: direct child of wrapper so grid-column spans both cols -->
   <div class="explorer-controls">
     <div class="control-group">
       <label>Category</label>
@@ -23,32 +21,44 @@ permalink: /reading/
     </div>
   </div>
 
-  <!-- Left Side: Results Grid -->
   <div class="explorer-main">
     <div class="papers-grid" id="papers-grid">
       {% for paper in site.data.papers %}
-      <div class="paper-card" 
+      <div class="paper-card"
            data-id="{{ paper.id }}"
-           data-category="{{ paper.category }}" 
+           data-category="{{ paper.category }}"
            tabindex="0">
         <div class="card-header">
           <span class="category-tag">{{ paper.category }}</span>
+          <span class="card-chevron" aria-hidden="true">›</span>
         </div>
         <h3 class="paper-title">{{ paper.title }}</h3>
-        <p class="paper-summary-snippet">{{ paper.summary | truncate: 120 }}</p>
         <div class="keyword-pills">
           {% for keyword in paper.keywords %}
           <span class="pill">#{{ keyword }}</span>
           {% endfor %}
         </div>
-        
-        <!-- Hidden database payload used to populate details view dynamically -->
+
+        <!-- Inline expanded detail -->
+        <div class="card-expanded-detail">
+          <div class="card-divider"></div>
+          <p class="paper-summary-snippet exp-snippet"></p>
+          <div class="ins-section highlight-box">
+            <h4>Key Takeaway</h4>
+            <p class="exp-takeaway"></p>
+          </div>
+          <div class="ins-section">
+            <h4>Summary</h4>
+            <p class="exp-summary"></p>
+          </div>
+          <a class="exp-link read-btn" href="#" target="_blank">Read The Literature &rarr;</a>
+        </div>
+
         <template class="paper-data">
           {
             "title": {{ paper.title | jsonify }},
             "category": {{ paper.category | jsonify }},
             "summary": {{ paper.summary | jsonify }},
-            "matters": {{ paper.matters | jsonify }},
             "takeaway": {{ paper.takeaway | jsonify }},
             "link": {{ paper.link | jsonify }}
           }
@@ -58,72 +68,31 @@ permalink: /reading/
     </div>
   </div>
 
-  <!-- Right Side: Sticky Detail Inspector Panel -->
-  <aside class="explorer-inspector" id="explorer-inspector">
-    <div class="inspector-placeholder" id="inspector-placeholder">
-      <p>⬅️ Click on the literature in the list to see takeaways and where you can read it yourself.</p>
-    </div>
-    <div class="inspector-content hidden" id="inspector-content">
-      <div class="inspector-header">
-        <span class="inspector-category" id="ins-category"></span>
-      </div>
-      <h2 id="ins-title">Paper Title</h2>
-      
-      <div class="ins-section">
-        <h4>Why it matters</h4>
-        <p id="ins-matters"></p>
-      </div>
-
-      <div class="ins-section highlight-box">
-        <h4>Key Takeaway</h4>
-        <p id="ins-takeaway"></p>
-      </div>
-
-      <div class="ins-section">
-        <h4>Summary</h4>
-        <p id="ins-summary"></p>
-      </div>
-
-      <a id="ins-link" href="#" target="_blank" class="read-btn">Read The Literature &rarr;</a>
-    </div>
-  </aside>
-
 </div>
 
-<!-- 3. Explorer Scoped Stylesheets (Safely extends Moonwalk variables) -->
 <style>
   :root {
     --accent-color: #0b57d0;
     --border-color: rgba(0, 0, 0, 0.08);
   }
-  
+
   [data-theme="dark"] {
     --accent-color: #a8c7fa;
     --border-color: rgba(255, 255, 255, 0.1);
   }
 
+  /* Single-column layout — no inspector panel */
   .explorer-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1.6fr;
-    grid-template-rows: auto;
-    gap: 1.5rem 2rem;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     margin-top: 1.5rem;
   }
 
-  @media (max-width: 850px) {
-    .explorer-wrapper {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  /* Controls span both columns */
   .explorer-controls {
-    grid-column: 1 / -1;
     display: flex;
     align-items: center;
     padding: 1rem 1.5rem;
-    /* background: var(--bg-secondary, #fafafa); */
     border-radius: 8px;
     border: 2px solid var(--border-color);
   }
@@ -159,7 +128,7 @@ permalink: /reading/
     border: none;
     padding: 0.65rem 1.5rem;
     font-size: 1rem;
-    font-weight: 700; /* was 500 */
+    font-weight: 700;
     cursor: pointer;
     border-radius: 6px;
     color: var(--text, #333);
@@ -176,26 +145,26 @@ permalink: /reading/
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   }
 
-  /* Papers Grid */
+  /* Full-width card grid */
   .papers-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.6rem;
   }
 
+  /* Compact card — roughly half the original height */
   .paper-card {
     background: var(--bg-secondary, #fafafa);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 1.25rem;
+    padding: 0.75rem 1rem;
     cursor: pointer;
-    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
   }
 
   .paper-card:hover {
-    transform: translateY(-2px);
     border-color: var(--accent-color);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   }
 
   .paper-card.selected {
@@ -207,7 +176,7 @@ permalink: /reading/
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
   }
 
   .category-tag {
@@ -216,22 +185,27 @@ permalink: /reading/
     opacity: 0.7;
   }
 
-  .paper-title {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.1rem;
-    line-height: 1.3;
+  .card-chevron {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    transition: transform 0.25s ease;
+    line-height: 1;
   }
 
-  .paper-summary-snippet {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    margin-bottom: 1rem;
+  .paper-card.expanded .card-chevron {
+    transform: rotate(90deg);
+  }
+
+  .paper-title {
+    margin: 0 0 0.4rem 0;
+    font-size: 1rem;
+    line-height: 1.3;
   }
 
   .keyword-pills {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem;
+    gap: 0.3rem;
   }
 
   .pill {
@@ -242,51 +216,29 @@ permalink: /reading/
     opacity: 0.75;
   }
 
-  /* Right Side Inspector */
-  .explorer-inspector {
-    position: sticky;
-    top: 2rem;
-    background: var(--bg-secondary, #fafafa);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 1.5rem;
-    min-height: 300px;
+  /* Expanded inline detail */
+  .card-expanded-detail {
+    display: none;
   }
 
-  .inspector-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 250px;
-    text-align: center;
-    color: var(--text-muted, #666);
+  .paper-card.expanded .card-expanded-detail {
+    display: block;
+  }
+
+  .card-divider {
+    height: 1px;
+    background: var(--border-color);
+    margin: 0.85rem 0;
+  }
+
+  .paper-summary-snippet {
     font-size: 0.9rem;
-  }
-
-  .inspector-header {
-    display: flex;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .inspector-category {
-    font-size: 0.75rem;
-    font-weight: 600;
-    background: var(--bg, #fff);
-    border: 1px solid var(--border-color);
-    padding: 2px 8px;
-    border-radius: 99px;
-  }
-
-  .explorer-inspector h2 {
-    margin-top: 0;
-    font-size: 1.4rem;
-    line-height: 1.25;
-    margin-bottom: 1.5rem;
+    opacity: 0.8;
+    margin: 0 0 1rem 0;
   }
 
   .ins-section {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.1rem;
   }
 
   .ins-section h4 {
@@ -319,7 +271,7 @@ permalink: /reading/
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     text-align: center;
     width: 80%;
   }
@@ -331,81 +283,85 @@ permalink: /reading/
   .hidden {
     display: none !important;
   }
+
+  /* ── Mobile: fix segmented control overflow ── */
+  @media (max-width: 600px) {
+    .explorer-controls {
+      padding: 0.75rem 1rem;
+    }
+
+    .segmented-control {
+      flex-wrap: wrap;
+    }
+
+    .segmented-control button {
+      flex: 1 1 auto;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+    }
+  }
+
+  /* ── Very small phones (375px and below) ── */
+  @media (max-width: 375px) {
+    .segmented-control button {
+      padding: 0.45rem 0.5rem;
+      font-size: 0.8rem;
+    }
+  }
 </style>
 
-<!-- 4. Interactive State Engine (Performant Vanilla JS) -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const categoryContainer = document.getElementById("category-filters");
     const paperCards = document.querySelectorAll(".paper-card");
-    
-    // Inspector elements
-    const placeholder = document.getElementById("inspector-placeholder");
-    const content = document.getElementById("inspector-content");
-    const insTitle = document.getElementById("ins-title");
-    const insCategory = document.getElementById("ins-category");
-    const insMatters = document.getElementById("ins-matters");
-    const insTakeaway = document.getElementById("ins-takeaway");
-    const insSummary = document.getElementById("ins-summary");
-    const insLink = document.getElementById("ins-link");
 
     let currentCategory = "All";
 
-    // Filter Logic
+    // ── Filter logic ──
     const applyFilters = () => {
       paperCards.forEach(card => {
         const cat = card.getAttribute("data-category");
-        const matchesCat = currentCategory === "All" || cat === currentCategory;
-
-        if (matchesCat) {
+        const matches = currentCategory === "All" || cat === currentCategory;
+        if (matches) {
           card.classList.remove("hidden");
         } else {
           card.classList.add("hidden");
-          if (card.classList.contains("selected")) {
-            clearSelection();
-          }
+          card.classList.remove("expanded", "selected");
         }
       });
     };
 
-    // Category button handling
     categoryContainer.addEventListener("click", (e) => {
       const btn = e.target.closest("button");
       if (!btn) return;
-
       categoryContainer.querySelector("button.active").classList.remove("active");
       btn.classList.add("active");
-
       currentCategory = btn.getAttribute("data-filter");
       applyFilters();
     });
 
-    // Selection Handling
+    // ── Card expand/collapse ──
     paperCards.forEach(card => {
       card.addEventListener("click", () => {
-        // Manage active UI states
-        const currentlySelected = document.querySelector(".paper-card.selected");
-        if (currentlySelected) currentlySelected.classList.remove("selected");
-        card.classList.add("selected");
-
-        // Parse static JSON data payload from the template
         const rawData = card.querySelector(".paper-data").innerHTML;
         const data = JSON.parse(rawData);
+        const isAlreadyExpanded = card.classList.contains("expanded");
 
-        // Update Inspector details
-        insTitle.textContent = data.title;
-        insCategory.textContent = data.category;
-        insMatters.textContent = data.matters;
-        insTakeaway.textContent = data.takeaway;
-        insSummary.textContent = data.summary;
-        insLink.href = data.link;
+        // Collapse any open card
+        document.querySelectorAll(".paper-card.expanded").forEach(c => {
+          c.classList.remove("expanded", "selected");
+        });
 
-        // Reveal content
-        placeholder.classList.add("hidden");
-        content.classList.remove("hidden");
+        if (!isAlreadyExpanded) {
+          card.classList.add("expanded", "selected");
+
+          const detail = card.querySelector(".card-expanded-detail");
+          detail.querySelector(".exp-takeaway").textContent = data.takeaway;
+          detail.querySelector(".exp-summary").textContent = data.summary;
+          detail.querySelector(".exp-link").href = data.link;
+        }
       });
 
-      // Accessibility: Allow keyboard selection
       card.addEventListener("keydown", (e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
@@ -413,12 +369,5 @@ permalink: /reading/
         }
       });
     });
-
-    function clearSelection() {
-      const selected = document.querySelector(".paper-card.selected");
-      if (selected) selected.classList.remove("selected");
-      placeholder.classList.remove("hidden");
-      content.classList.add("hidden");
-    }
   });
 </script>
