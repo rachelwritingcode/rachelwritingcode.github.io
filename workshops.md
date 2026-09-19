@@ -4,6 +4,11 @@ title: ""
 ---
 
 ## Talks 
+
+⭐ [AI Speech-to-Text in Practice: Lessons for Library Workflows, Testing, and Evaluation](https://www.choice360.org/wp-content/uploads/2026/06/Choice-Webinar_OCUL_AI-Speech-to-Text-in-Practice_Slides.pptx.pdf)
+
+⭐ [Scholars Portal Days 2025 - Scholaris: Mises à jour en français ](https://spday.scholarsportal.info/agenda/)
+
 ⭐ [Scholars Portal Days 2025 - Scholaris: Mises à jour en français ](https://spday.scholarsportal.info/agenda/)
 
 ⭐ Scholaris November 2025 Community Call - Demo: Creating a SAF package using SAFCreator 
@@ -39,3 +44,10 @@ title: ""
 
 ⭐ [ PyLadies & Women Who Code Workshop 2016: Python & Robotics ](https://docs.google.com/presentation/d/1bPcJztavFp446BhchM5uzrk3uMNsvPxYTS8gB9Ejzbs/edit?usp=sharing")
 
+---
+
+## Publications
+
+⭐ [AI Tools for Academic Libraries: AI Speech-to-Text Models](https://www.choice360.org/libtech-insight/ai-tools-for-academic-libraries-ai-speech-to-text-models/7)
+
+⭐ [Creating and Managing a Repository of Past Exam Papers](https://ital.corejournals.org/index.php/ital/article/view/11837)
