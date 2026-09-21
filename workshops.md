@@ -9,8 +9,6 @@ title: ""
 
 ⭐ [Scholars Portal Days 2025 - Scholaris: Mises à jour en français ](https://spday.scholarsportal.info/agenda/)
 
-⭐ [Scholars Portal Days 2025 - Scholaris: Mises à jour en français ](https://spday.scholarsportal.info/agenda/)
-
 ⭐ Scholaris November 2025 Community Call - Demo: Creating a SAF package using SAFCreator 
 
 ⭐ [DSpace North American User Group 2024 - Developing a New National Shared Repository Service in Canada ](https://wiki.lyrasis.org/display/DSPACE/2024+DSpace+North+American+User+Group+Meeting?preview=/321585441/360251450/DSpace%202024%20North%20America%20User%20Group%20Meeting.pdf
